@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SparkChat</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="chat-page">
+
+    <div class="sidebar">
+
+        <div class="brand">
+            <img src="logo-black.png" class="sidebar-logo">
+        </div>
+
+        <div id="chatList"></div>
+
+        <div class="chat-item create-btn" onclick="openCreateModal()">
+            <div class="chat-name">＋ Yeni sohbet</div>
+            <div class="chat-sub">Oda oluştur</div>
+        </div>
+
+    </div>
+
+    <div class="main">
+
+        <div class="topbar" id="roomTitle">
+            # Genel
+        </div>
+
+        <div id="messages" class="messages">
+
+            <div class="message">
+                <b>Sistem</b><br>
+                SparkChat'e hoş geldin!
+            </div>
+
+        </div>
+
+        <div class="message-input" id="inputBox">
+            <input id="messageBox" type="text" placeholder="Mesaj yaz...">
+            <button disabled id="sendMessage" onclick="sendMessage()">Gönder</button>
+        </div>
+
+    </div>
+
+    <div id="modal" class="modal hidden">
+
+        <div class="modal-box">
+
+            <h3>Yeni sohbet</h3>
+
+            <input id="roomName" placeholder="Grup ismi">
+
+            <select id="roomAccess">
+                <option value="private">Sadece davet</option>
+                <option value="public">Herkese açık</option>
+            </select>
+
+            <input id="roomAlias" placeholder="Oda adresi (örnek: eğlenceli-sohbet)">
+
+            <button onclick="createRoom()">Oluştur</button>
+            <button onclick="closeModal()">İptal</button>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="app.js"></script>
+
+</body>
+</html>

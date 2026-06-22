@@ -1,0 +1,370 @@
+/* ===== Ana Sayfa ===== */
+
+* {
+    font-family: Segoe UI, sans-serif;
+}
+
+.chat-page {
+    margin: 0;
+    background: #1e2230;
+    color: white;
+
+    display: flex;
+    height: 100vh;
+}
+
+#chatList {
+    padding: 10px;
+}
+
+.chat-item {
+    padding: 10px;
+    margin: 5px 10px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-item:hover {
+    background: #323844;
+}
+
+.chat-name {
+    font-weight: bold;
+}
+
+.chat-sub {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* Sol panel */
+
+.sidebar {
+    width: 240px;
+    background: #2a2f3a;
+
+    display: flex;
+    flex-direction: column;
+
+    border-right: 1px solid #1a1b1e;
+}
+
+.no-permission {
+    width: 100%;
+    padding: 12px;
+
+    text-align: center;
+    color: #ff0000;
+}
+
+.msg-deleted {
+    display: flex;
+    align-items: center;   /* 🔥 dikey ortalama */
+    gap: 6px;
+
+    opacity: 0.6;
+    font-style: italic;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+
+    border-bottom: 1px solid #1a1b1e;
+}
+
+.create-btn {
+    color: #2563eb;
+}
+
+.sidebar-logo {
+
+    height: 32px;
+
+    margin-right: 10px;
+}
+
+.sidebar-section {
+    padding: 10px;
+}
+
+.sidebar-item {
+    padding: 10px;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.sidebar-item:hover {
+    background: #3a3c41;
+}
+
+/* Sağ taraf */
+
+.main {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    background: #313338;
+
+    padding: 15px;
+    font-size: 18px;
+
+    border-bottom: 1px solid #1a1b1e;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.message {
+    max-width: 70%;
+
+    background: #2b2d31;
+    padding: 10px;
+    border-radius: 10px;
+
+    margin-bottom: 8px;
+
+    word-break: break-word;
+}
+
+.message.me {
+    align-self: flex-end;
+    background: #3b82f6;
+    color: white;
+
+    border: none;
+}
+
+.message-input {
+    display: flex;
+
+    padding: 15px;
+    background: #313338;
+
+    gap: 10px;
+}
+
+.message-input input {
+    flex: 1;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #1e1f22;
+    color: white;
+
+    padding: 12px;
+}
+
+.message-input button {
+    border: none;
+    border-radius: 8px;
+
+    background: #4aa4ff;
+    color: white;
+
+    padding: 12px 20px;
+
+    cursor: pointer;
+}
+
+.message-input button:hover {
+    filter: brightness(1.1);
+}
+
+.message-input button:disabled {
+    background: #262931;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+}
+
+/* =========================
+   MODAL BOX
+========================= */
+
+.modal-box {
+    width: 320px;
+
+    background: #191C23;
+
+    border-radius: 12px;
+
+    padding: 16px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.modal-box input,
+.modal-box select {
+    padding: 10px;
+
+    border: 1px solid #35383d;
+    background: #313338;
+    border-radius: 8px;
+
+    outline: none;
+    color: white;
+}
+
+.modal-box input:focus,
+.modal-box select:focus {
+    border-color: #3b82f6;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.modal-box button {
+    padding: 10px;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: 500;
+}
+
+/* primary button */
+.modal-box button:first-of-type {
+    background: #3b82f6;
+    color: white;
+}
+
+.modal-box button:first-of-type:hover {
+    background: #2563eb;
+}
+
+/* cancel button */
+.modal-box button:last-of-type {
+    background: #ff0000;
+    color: white;
+}
+
+.modal-box button:last-of-type:hover {
+    background: #ea0000;
+}
+
+/* =========================
+   HIDDEN CLASS
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+/* ===== MESAJ GENEL ===== */
+
+.message {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 70%;
+    margin-bottom: 8px;
+}
+
+/* ===== BAŞKASI (sol taraf) ===== */
+
+.message.other {
+    align-self: flex-start;
+}
+
+/* header sadece karşı tarafta */
+.message.other .msg-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    font-size: 12px;
+    opacity: 0.7;
+    margin-bottom: 3px;
+}
+
+.message.other .avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.message.other .username {
+    font-weight: 600;
+}
+
+.message.other .time {
+    margin-left: auto;
+    font-size: 11px;
+    opacity: 0.6;
+}
+
+/* mesaj balonu */
+.msg-body {
+    background: #2b2d31;
+    padding: 10px;
+    border-radius: 10px;
+
+    word-break: break-word;
+}
+
+/* ===== SEN (sağ + mavi) ===== */
+
+.message.me {
+    align-self: flex-end;
+}
+
+.message.me .msg-body {
+    background: #3b82f6;
+    color: white;
+}
+
+/* SENDE HEADER YOK */
+.message.me .msg-header {
+    display: none;
+}
+
+/* ===== SİLİNEN MESAJ ===== */
+
+.msg-deleted {
+    opacity: 0.6;
+    font-style: italic;
+}

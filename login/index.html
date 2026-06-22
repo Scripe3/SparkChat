@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SparkChat - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="center">
+
+  <div class="login-box">
+    <h1>Giriş yap</h1>
+
+    <input id="user" placeholder="Kullanıcı adı" type="text">
+    <input id="pass" type="password" placeholder="Şifre">
+
+    <button onclick="login()">Giriş Yap</button>
+
+    <p class="register-link">
+      Matrix hesabınız yok mu?
+      <a href="https://account.matrix.org/register" target="_blank">
+        Hesap oluşturun
+      </a>
+    </p>
+
+    <p id="status"></p>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
