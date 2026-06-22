@@ -98,7 +98,7 @@ function renderInput(room) {
 // LOGIN CHECK
 // --------------------
 if (!localStorage.getItem("mx_token")) {
-    window.location.href = "login.html?next=index.html";
+    window.location.href = "login/";
 }
 
 // --------------------
