@@ -24,16 +24,12 @@ console.log(
     "%cdolandırılıyor olma olasılığınız yüksektir!\n\n" +
     "%cEğer ne yapacağınızdan eminseniz, devam edebilirsiniz.",
 
-    // DUR!
     "color: red; font-size: 22px; font-weight: bold;",
 
-    // açıklama
     "color: #ff3b30; font-size: 14px; font-weight: normal;",
 
-    // kritik satır
     "color: #ff0000; font-size: 16px; font-weight: bold;",
 
-    // son satır
     "color: gray; font-size: 12px; font-style: italic;"
 );
 
