@@ -368,3 +368,203 @@
     opacity: 0.6;
     font-style: italic;
 }
+
+.avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-fallback {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+
+    background: #3b82f6;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.icon-btn:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Room panel */
+.room-panel {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: 320px;
+    height: 100vh;
+
+    background: #191C23;
+
+    border-left: 1px solid #35383d;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 1000;
+
+    overflow: hidden;
+}
+
+.panel-header {
+    padding: 16px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #35383d;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.panel-header button {
+    background: none;
+    border: none;
+
+    color: #aaa;
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.panel-header button:hover {
+    color: white;
+}
+
+.panel-content button {
+    background: #313338;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 10px 14px;
+
+    cursor: pointer;
+
+    transition: 0.15s;
+}
+
+.panel-content button:hover {
+    background: #3b4048;
+}
+
+.panel-content button:active {
+    transform: scale(0.98);
+}
+
+.panel-section {
+    background: #232730;
+
+    padding: 12px;
+
+    border-radius: 10px;
+}
+
+.panel-section-title {
+    color: #9ca3af;
+    font-size: 12px;
+
+    margin-bottom: 8px;
+
+    text-transform: uppercase;
+}
+
+.panel-item {
+    padding: 10px;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: background .15s;
+}
+
+.panel-item:hover {
+    background: #313338;
+}
+
+.panel-item.danger {
+    color: #ff4d4f;
+}
+
+.panel-item.danger:hover {
+    background: rgba(255,77,79,.15);
+}
+
+.panel-tabs {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 10px;
+
+    border-bottom: 1px solid #35383d;
+}
+
+.panel-tabs button {
+    width: 100%;
+
+    background: #313338;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 12px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition: background .15s;
+}
+
+.panel-tabs button:hover {
+    background: #3b4048;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.chat-image {
+    max-width: 220px;
+    border-radius: 10px;
+    margin-top: 6px;
+}

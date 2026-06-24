@@ -2,6 +2,19 @@ import * as sdk from "https://esm.sh/matrix-js-sdk?bundle";
 
 let client;
 
+function ssoLogin() {
+  import("https://esm.sh/matrix-js-sdk?bundle").then(async (sdk) => {
+    const client = sdk.createClient({
+      baseUrl: "https://matrix.org"
+    });
+
+    const url = await client.getSsoLoginUrl(window.location.origin + "/callback.html");
+
+    console.log("To complate SSO Login, login with this url: ", url);
+    window.location.href = url;
+  });
+}
+
 async function login() {
   const user = document.getElementById("user").value;
   const pass = document.getElementById("pass").value;

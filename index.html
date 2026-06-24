@@ -27,8 +27,12 @@
 
     <div class="main">
 
-        <div class="topbar" id="roomTitle">
-            # Genel
+        <div class="topbar">
+            <div id="roomTitle"># Genel</div>
+
+            <div class="topbar-actions">
+                <button class="icon-btn" onclick="toggleRoomPanel()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M12 22c5.51 0 10-4.49 10-10S17.51 2 12 2 2 6.49 2 12s4.49 10 10 10M11 7h2v2h-2zm0 4h2v6h-2z"></path></svg></button>
+            </div>
         </div>
 
         <div id="messages" class="messages">
@@ -41,8 +45,26 @@
         </div>
 
         <div class="message-input" id="inputBox">
-            <input id="messageBox" type="text" placeholder="Mesaj yaz...">
+            <input id="messageBox" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Mesaj yaz...">
             <button disabled id="sendMessage" onclick="sendMessage()">Gönder</button>
+        </div>
+
+        <div id="roomPanel" class="room-panel hidden">
+
+            <div class="panel-header">
+                <span>Oda Bilgisi</span>
+                <button onclick="toggleRoomPanel()">✕</button>
+            </div>
+
+            <div class="panel-tabs">
+                <button onclick="setTab('info')">Bilgi</button>
+                <button onclick="setTab('invite')">Davet</button>
+                <button onclick="setTab('members')">Kişiler</button>
+                <button onclick="setTab('settings')">Ayarlar</button>
+            </div>
+
+            <div id="panelContent" class="panel-content"></div>
+
         </div>
 
     </div>

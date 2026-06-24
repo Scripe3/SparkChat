@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script type="module">
+import * as sdk from "https://esm.sh/matrix-js-sdk?bundle";
+
+const params = new URLSearchParams(location.search);
+const loginToken = params.get("loginToken");
+
+if (!loginToken) {
+  document.body.innerText = "Please enter the token with ?loginToken=";
+}
+
+const client = sdk.createClient({
+  baseUrl: "https://matrix.org"
+});
+
+const res = await client.login("m.login.token", {
+  token: loginToken
+});
+
+localStorage.setItem("mx_token", res.access_token);
+localStorage.setItem("mx_user", res.user_id);
+
+document.body.innerText = "Logged in successfully";
+
+setTimeout(() => {
+  location.href = "index.html";
+}, 1000);
+</script>
+</body>
+</html>
