@@ -48,3 +48,4 @@ async function login() {
 }
 
 globalThis.login = login;
+globalThis.ssoLogin = ssoLogin;
